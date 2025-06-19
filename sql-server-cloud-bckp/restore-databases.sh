@@ -11,10 +11,10 @@ echo "Restaurando os bancos de dados..."
 
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "$MSSQL_SA_PASSWORD" -Q "
 -- Restauração do banco de dados principal
-RESTORE DATABASE [geotracker.data] 
-FROM DISK = N'/var/opt/mssql/backup/fullbckps/geotracker.data.bak' 
+RESTORE DATABASE [waves] 
+FROM DISK = N'/var/opt/mssql/backup/fullbckps/waves.bak' 
 WITH 
-    MOVE N'geotracker.data' TO N'/var/opt/mssql/data/geotracker.data.mdf',
+    MOVE N'waves' TO N'/var/opt/mssql/data/waves.mdf',
     MOVE N'OLD' TO N'/var/opt/mssql/data/OLD.ndf',
     MOVE N'NEW' TO N'/var/opt/mssql/data/NEW.ndf',
     MOVE N'NEWEST' TO N'/var/opt/mssql/data/NEWEST.ndf',
@@ -50,18 +50,18 @@ WITH
     MOVE N'WK21' TO N'/var/opt/mssql/data/WK21.ndf',
     MOVE N'WK20' TO N'/var/opt/mssql/data/WK20.ndf',
     MOVE N'WK19' TO N'/var/opt/mssql/data/WK19.ndf',
-    MOVE N'geotracker.data_log' TO N'/var/opt/mssql/data/geotracker.data_log.ldf',  
+    MOVE N'waves_log' TO N'/var/opt/mssql/data/waves_log.ldf',  
     NOUNLOAD,  
     STATS = 5;
 
 GO
 
 -- Restauração do banco de dados auxiliar
-RESTORE DATABASE [geotracker.aux] 
-FROM DISK = N'/var/opt/mssql/backup/fullbckps/geotracker.aux.bak' 
+RESTORE DATABASE [waves.aux] 
+FROM DISK = N'/var/opt/mssql/backup/fullbckps/waves.aux.bak' 
 WITH 
-    MOVE N'geotracker.aux' TO N'/var/opt/mssql/data/geotracker.aux_Primary.mdf',  
-    MOVE N'geotracker.aux_log' TO N'/var/opt/mssql/data/geotracker.aux_Primary.ldf',  
+    MOVE N'waves.aux' TO N'/var/opt/mssql/data/waves.aux_Primary.mdf',  
+    MOVE N'waves.aux_log' TO N'/var/opt/mssql/data/waves.aux_Primary.ldf',  
     NOUNLOAD,  
     STATS = 5;
 GO
