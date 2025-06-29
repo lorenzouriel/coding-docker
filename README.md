@@ -12,7 +12,7 @@
 [![Docker](https://img.shields.io/badge/Docker-24.0+-2496ED?logo=docker&style=flat-square)](https://www.docker.com/)
 [![Docker Compose](https://img.shields.io/badge/Compose-1.29+-2496ED?logo=docker&style=flat-square)](https://docs.docker.com/compose/)
 
-Welcome to **Coding Docker**, a personal collection of Dockerized solutions for local development, backup automation, and reporting services. Each subfolder includes a self-contained setup designed for practical use or experimentation.
+Welcome to **Coding Docker**, a personal collection of Dockerized solutions. Each subfolder includes a self-contained setup designed for practical use or experimentation.
 
 ## 📦 Projects
 ### 1. `sql-server-bckp`
