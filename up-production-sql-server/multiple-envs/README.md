@@ -8,9 +8,7 @@ docker-compose --env-file .env.qa up -d
 
 # For Prod
 docker-compose --env-file .env.prod up -d
-```
 
-### Benefits:
-- Same docker-compose.yml for all environments.
-- Environment-specific .env controls password, ports, resources, and volumes.
-- Easy to extend if new envs appear.
+# Running All
+docker-compose -f docker-compose-all.yaml up -d
+```
