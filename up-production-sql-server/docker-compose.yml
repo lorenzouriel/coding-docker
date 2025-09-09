@@ -6,7 +6,8 @@ services:
     environment:
       ACCEPT_EULA: "Y"
       MSSQL_PID: "Standard"
-      SA_PASSWORD: "${SA_PASSWORD}"
+      SA_PASSWORD: "${MSSQL_SA_PASSWORD}"
+      MSSQL_AGENT_ENABLED: "true"
     ports:
       - "14330:1433"
     ulimits:
